@@ -3,7 +3,7 @@ $('#registration').submit(function(e){
     var data = new FormData(this);
     $.ajax({
         type:'POST',
-        url: 'handler.php',
+        url: 'register.php',
         data: data,
         cache: false,
         contentType: false,

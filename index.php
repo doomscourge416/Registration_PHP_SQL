@@ -20,7 +20,14 @@ require 'bootstrap.php';
                     
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Введите email">
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Введите email">
+                        <div class="form-control-feedback"></div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" class="form-control" id="name" name ="name" aria-describedby="emailHelp" placeholder="Введите имя">
                         <div class="form-control-feedback"></div>
                     </div>
                     
@@ -31,7 +38,8 @@ require 'bootstrap.php';
                     </div>
 
                     <div class="form-group">
-                        <label for="password" class="form-control" id="repeat-password" name="repeat-password" placeholder="Повторите пароль"></label>
+                        <label for="repeat-password">Повторите пароль</label>
+                        <input type="password" class="form-control" id="repeat-password" name="repeat-password" placeholder="Повторите пароль">
                         <div class="form-control-feedback"></div>
                     </div>
 
@@ -49,7 +57,8 @@ require 'bootstrap.php';
                             <th>#</th>
                             <th>Имя</th>
                             <th>Email</th>
-                            <th>Зарегистрироваться</th>
+                            <th>Зарегистрирован</th>
+                            <th>Обновлялся</th>
                         </tr>
                     </thead>
 
@@ -57,10 +66,11 @@ require 'bootstrap.php';
                         <?php $users = getUsersList(); ?>
                         <?php if (!empty($users)) : foreach($users as $user ) :  ?>
                             <tr>
-                                <th scope="row"><?php $user['id'] ?></th>
-                                <td><?php $user['name'] ?></td>
-                                <td><?php $user['email'] ?></td>
-                                <td><?php $user['created_at'] ?></td>
+                                <th scope="row"><?php echo $user['id'] ?></th>
+                                <td><?php echo $user['name'] ?></td>
+                                <td><?php echo $user['email'] ?></td>
+                                <td><?php echo $user['created_at'] ?></td>
+                                <td><?php echo $user['updated_at'] ?></td>
                             </tr>
                         <?php endforeach; ?>
                         <?php endif; ?>

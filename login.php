@@ -16,7 +16,7 @@ function generateCode($length = 6){
 }
 
 //  Соединяемся с БД
-$link = mysqli_connect("localhost", "mysql_user", "mysql_password", "testtable");
+$link = mysqli_connect("127.0.0.1", "root", "", "testtable");
 if(isset($_POST['submit'])){
 
     //  Вытаскиваем из БД запись, у которой логин равняется введенному

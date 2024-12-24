@@ -7,7 +7,7 @@
 
 function get_connection()
 {
-    return new PDO('mysql:host=database;dbname=registration', 'root', 'registration');
+    return new PDO('mysql:host=127.0.0.1;dbname=testtable', 'root', '');
 }
 function insert(array $data)
 {
